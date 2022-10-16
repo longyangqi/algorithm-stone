@@ -31,7 +31,7 @@ class Leetcode:
         p = util.get_root("user", "leetcode")
         entries = os.listdir(p)
         for k in entries:
-            if k.endswith(".cpp"):
+            if k.endswith(".cpp") or k.endswith(".py"):
                 self.finished.append(k)
             elif k.endswith(".md"):
                 self.flasks.append(k)
@@ -156,6 +156,8 @@ class Leetcode:
         return j['data']['question']['translatedTitle']
 
     def get_update_db_time(self):
+        # print((self.dict.keys()))
+        # print(self.dict["leetcode_update_db_time"])
         t = self.dict.get("leetcode_update_db_time")
         if t == None:
             return 0

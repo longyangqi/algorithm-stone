@@ -19,19 +19,29 @@ def get_file_content(file):
 
 def get_root(d, f):
     path = Path(os.path.abspath(__file__))
-    return os.path.abspath(os.path.join(path.parent.parent, d, f))
+    return os.path.abspath(os.path.join(str(path.parent.parent), d, f))
 
 def get_db(f):
     path = Path(os.path.abspath(__file__))
-    return os.path.abspath(os.path.join(path.parent.parent, "db", f))
+    # path = os.path.abspath(__file__)
+    # path = os.path.dirname(os.path.dirname(path))
+
+    # print(f, path, path.parent.parent)
+    # return os.path.abspath(os.path.join(path, "db", f))
+
+    return os.path.abspath(os.path.join(str(path.parent.parent), "db", f))
+    # return os.path.abspath(path.parent.parent.joinpath("db", f))
+    # return os.path.abspath(path.parent.parent / "db" / f)
+
+
 
 def get_map(f):
     path = Path(os.path.abspath(__file__))
-    return os.path.abspath(os.path.join(path.parent.parent, "map", f))
+    return os.path.abspath(os.path.join(str(path.parent.parent), "map", f))
 
 def get_images(f):
     path = Path(os.path.abspath(__file__))
-    return os.path.abspath(os.path.join(path.parent.parent, "images", f))
+    return os.path.abspath(os.path.join(str(path.parent.parent), "images", f))
 
 def is_int(s):
     try: 
